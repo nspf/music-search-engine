@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.musicsearchengine.ui.songpreview.SongPreviewViewModel" />
+
+        <variable
+            name="fragment"
+            type="com.example.musicsearchengine.ui.songpreview.SongPreviewFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.rishabhharit.roundedimageview.RoundedImageView
+            android:id="@+id/song_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:transitionName="@{viewModel.song.trackName}"
+            app:cornerRadius="10000dp"
+            app:fragment="@{fragment}"
+            app:imageUrlWithTransition="@{viewModel.song.artworkUrl100}"
+            app:layout_constraintBottom_toTopOf="@id/middle_guideline"
+            app:layout_constraintEnd_toEndOf="@id/right_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@id/top_guideline" />
+
+        <TextView
+            android:id="@+id/song_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_padding_size_medium"
+            android:text="@{viewModel.song.trackName}"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+            app:layout_constraintEnd_toEndOf="@id/right_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@id/middle_guideline"
+            tools:hint="Jeniffer Lopez" />
+
+        <TextView
+            android:id="@+id/artist_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_padding_size_medium"
+            android:text="@{viewModel.song.artistName}"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+            app:layout_constraintEnd_toEndOf="@id/right_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@id/song_name" />
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/player_view"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:focusable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/middle_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/margin_padding_size_medium" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/margin_padding_size_medium" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/share_icon"
+            android:layout_width="@dimen/song_preview_icon_size"
+            android:layout_height="@dimen/song_preview_icon_size"
+            android:layout_margin="@dimen/margin_padding_size_medium"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@id/player_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/like_icon"
+            app:layout_constraintTop_toBottomOf="@id/artist_name"
+            app:songUrl="@{viewModel.song.trackViewUrl}"
+            app:srcCompat="@drawable/share_variant" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/like_icon"
+            android:layout_width="@dimen/song_preview_icon_size"
+            android:layout_height="@dimen/song_preview_icon_size"
+            android:layout_margin="@dimen/margin_padding_size_medium"
+            android:scaleType="centerCrop"
+            app:favorite="@{viewModel.song.isFavorite}"
+            app:layout_constraintBottom_toTopOf="@id/player_view"
+            app:layout_constraintEnd_toStartOf="@id/share_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/artist_name"
+            app:srcCompat="@drawable/heart" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

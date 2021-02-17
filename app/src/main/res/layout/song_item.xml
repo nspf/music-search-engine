@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="song"
+            type="com.example.musicsearchengine.database.SongEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:minHeight="@dimen/item_song_height"
+        android:padding="@dimen/margin_padding_size_small"
+        android:paddingStart="@dimen/margin_padding_size_medium"
+        android:paddingEnd="@dimen/margin_padding_size_medium">
+
+        <com.rishabhharit.roundedimageview.RoundedImageView
+            android:id="@+id/song_image"
+            android:layout_width="@dimen/song_item_image_size"
+            android:layout_height="@dimen/song_item_image_size"
+            android:gravity="center"
+            android:transitionName="@{song.trackName}"
+            app:cornerRadius="4dp"
+            app:imageUrl="@{song.artworkUrl60}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/song_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:paddingStart="@dimen/margin_padding_size_small"
+            android:paddingEnd="@dimen/margin_padding_size_medium"
+            android:text="@{song.trackName}"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:textColor="?android:attr/textColorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/song_image"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@tools:sample/lorem/random" />
+
+        <TextView
+            android:id="@+id/song_duration"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:paddingStart="@dimen/margin_padding_size_small"
+            android:paddingEnd="16dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            android:textColor="?android:attr/textColorSecondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/song_image"
+            app:layout_constraintTop_toBottomOf="@id/song_name"
+            app:songDuration="@{song.trackTimeMillis}"
+            tools:text="@tools:sample/date/hhmm" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

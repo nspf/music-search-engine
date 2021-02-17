@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Music Search Engine</string>
+    <string name="search">Search</string>
+    <string name="error_api_request">Unable to load results. Check your Internet connection and try again</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="send_to">Send to</string>
+    <string name="song_duration">%1$d:%2$d</string>
+    <string name="search_for_an_artist_or_band">Search for an artist or band</string>
+    <string name="favorites">Favorites</string>
+    <string name="empty_state_icon">Empty state icon</string>
+</resources>

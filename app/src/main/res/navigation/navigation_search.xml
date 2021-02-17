@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_search"
+    app:startDestination="@id/searchFragment">
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.musicsearchengine.ui.search.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_albumsFragment"
+            app:destination="@id/albumsFragment"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/albumsFragment"
+        android:name="com.example.musicsearchengine.ui.albums.AlbumsFragment"
+        tools:layout="@layout/fragment_albums">
+        <action
+            android:id="@+id/action_albumsFragment_to_songsFragment"
+            app:destination="@id/songsFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <argument
+            android:name="artist"
+            app:argType="com.example.musicsearchengine.database.ArtistEntity" />
+    </fragment>
+    <fragment
+        android:id="@+id/songsFragment"
+        android:name="com.example.musicsearchengine.ui.songs.SongsFragment"
+        android:label="SongsFragment"
+        tools:layout="@layout/fragment_songs">
+        <action
+            android:id="@+id/action_songsFragment_to_songPreviewFragment"
+            app:destination="@id/songPreviewFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <argument
+            android:name="album"
+            app:argType="com.example.musicsearchengine.database.AlbumEntity" />
+    </fragment>
+    <fragment
+        android:id="@+id/songPreviewFragment"
+        android:name="com.example.musicsearchengine.ui.songpreview.SongPreviewFragment"
+        android:label="@string/now_playing"
+        tools:layout="@layout/fragment_song_preview">
+        <argument
+            android:name="song"
+            app:argType="com.example.musicsearchengine.database.SongEntity" />
+    </fragment>
+</navigation>

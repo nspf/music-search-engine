@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_favorites"
+    app:startDestination="@id/favoriteSongsFragment">
+
+    <fragment
+        android:id="@+id/favoriteSongsFragment"
+        android:name="com.example.musicsearchengine.ui.favorites.FavoriteSongsFragment"
+        android:label="Favorites"
+        tools:layout="@layout/fragment_favorite_songs">
+        <action
+            android:id="@+id/action_favoriteSongsFragment_to_songPreviewFragment2"
+            app:destination="@id/songPreviewFragment2"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/songPreviewFragment2"
+        android:name="com.example.musicsearchengine.ui.songpreview.SongPreviewFragment"
+        android:label="@string/now_playing"
+        tools:layout="@layout/fragment_song_preview">
+        <argument
+            android:name="song"
+            app:argType="com.example.musicsearchengine.database.SongEntity" />
+    </fragment>
+</navigation>

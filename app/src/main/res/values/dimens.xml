@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Margin & Padding, 8 dp baseline, https://material.io/design/layout/understanding-layout.html -->
+    <dimen name="margin_padding_size_small">8dp</dimen>
+    <dimen name="margin_padding_size_medium">16dp</dimen>
+    <dimen name="margin_padding_size_large">24dp</dimen>
+    <dimen name="margin_padding_size_xlarge">32dp</dimen>
+    <dimen name="margin_padding_size_xxlarge">40dp</dimen>
+
+    <!-- Touch Target Size, https://material.io/design/usability/accessibility.html#layout-and-typography -->
+    <dimen name="standard_touch_size">48dp</dimen>
+
+    <!-- Font sizes, https://material.io/design/typography/the-type-system.html#type-scale -->
+    <dimen name="text_size_micro">12sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_large">20sp</dimen>
+    <dimen name="text_size_xlarge">34sp</dimen>
+    <dimen name="text_size_xxlarge">45sp</dimen>
+    <dimen name="text_size_xxxlarge">56sp</dimen>
+
+    <!-- Dark Text Color for Light Background -->
+    <color name="textDarkPrimary">#DE000000</color> <!--DE for %87 opacity-->
+    <color name="textDarkSecondary">#8A000000</color> <!--8A for %54 opacity-->
+    <color name="textDarkDisabled">#61000000</color> <!--61 for %38 opacity-->
+
+    <!-- White Text Color for Dark Background -->
+    <color name="textLightPrimary">#FFFFFF</color> <!--%100 opacity-->
+    <color name="textLightSecondary">#B2FFFFFF</color> <!--B2 for %70 opacity-->
+    <color name="textLightDisabled">#80FFFFFF</color> <!--80 for %50 opacity-->
+    <color name="textLightDisabledDEPRECATED">#4CFFFFFF</color> <!--4C for %30 opacity-->
+
+    <dimen name="item_song_height">52dp</dimen>
+    <dimen name="item_album_offset">16dp</dimen>
+    <dimen name="song_share_icon_size">48dp</dimen>
+    <dimen name="artist_item_height">64dp</dimen>
+    <dimen name="empty_state_icon_size">128dp</dimen>
+    <dimen name="song_preview_icon_size">36dp</dimen>
+    <dimen name="song_item_image_size">48dp</dimen>
+
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="list_divider">#1D242D</color>
+    <color name="empty_state_icon">#1D242D</color>
+
+    <color name="primaryColor">#0D141D</color>
+    <color name="primaryLightColor">#1D242D</color>
+    <color name="primaryDarkColor">#0D141D</color>
+    <color name="secondaryColor">#0D141D</color>
+    <color name="secondaryLightColor">#6ec6ff</color>
+    <color name="secondaryDarkColor">#0069c0</color>
+    <color name="primaryTextColor">#ffffff</color>
+    <color name="secondaryTextColor">#0D141D</color>
+
+    <color name="icon_disabled">@android:color/darker_gray</color>
+
+</resources>
